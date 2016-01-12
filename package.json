@@ -1,0 +1,13 @@
+{ "name": "angular-trainig-task-1",
+  "description": "task for angular training",
+  "version": "0.0.1",
+  "author" : { 
+  	"name" : "Pavel Datsenka",
+  	"email" : "Pavel_Datsenka@epam.com"
+  },
+  "dependencies": {
+    "angular": "1.4.*",
+    "bootstrap" : "latest",
+    "angularjs-datepicker" : "latest"
+  }
+}

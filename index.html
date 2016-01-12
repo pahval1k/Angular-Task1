@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Task</title>
+
+	<!-- bootstrap styles -->
+	<link rel="stylesheet" type="text/css" href="node_modules\bootstrap\dist\css\bootstrap.css">
+	<!-- my custom styles -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- styles of angular datepicker -->
+	<link rel="stylesheet" type="text/css" href="node_modules\angularjs-datepicker\dist\angular-datepicker.min.css">
+
+</head>
+<body>
+	<!-- declaring angular app and formController -->
+	<div ng-app="myApp" ng-controller="formController" class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4 vert-offset-top-5">
+		<p> 
+			You are allowed to use date only in YYYY/MM/DD format and your greeting text should contain: only russian symbols, more than 3 symbols, only first letter in uppercase of the word 
+		</p>
+		<form novalidate ng-submit="submit()" class="form-horizontal" name="myForm">
+		  
+		  <!-- group for user name field --> 
+		  <div class="form-group">
+		  	<label for="userName" class="col-sm-3 control-label">User name:</label>
+		  	<div class="col-sm-9">
+		    	<input type="text" id="userName" name="userName" ng-model="userName" class="form-control">
+		    </div>
+		  </div>
+
+		  <!-- group for age number field --> 
+		  <div class="form-group">
+		  	<label for="ageNumber" class="col-sm-3 control-label">Age:</label>
+		  	<div class="col-sm-9">
+		  		<input type="number" id="ageNumber" name="ageNumber" ng-model="ageNumber" class="form-control" min="1" max="99">
+		  	</div>
+		  </div>		  
+
+		  <!-- group for date field --> 
+		  <div class="form-group">
+		  	<label for="date" class="col-sm-3 control-label">Date:</label>
+		  	<div class="col-sm-9">
+				<datepicker date-format="yyyy/MM/dd">
+				  <input ng-model="date" type="text" id="date" name="date" ng-model="date" ng-pattern="/^\d{4}/\d{1,2}/\d{1,2}$/" class="form-control">
+			  	</datepicker>	
+		  	</div>  		  	
+		  </div>		  
+
+		  <!-- group for greeting field --> 
+		  <div class="form-group" >
+		  	<label for="greetingField" class="col-sm-3 control-label">Greeting Field:</label>
+		  	<div class="col-sm-9">
+		  		<input type="text" id="greetingField" name="greetingField" ng-pattern="/^[А-Я][а-я\s]{3,}$/" ng-model="greetingField" class="form-control" required>
+		    </div>
+		  </div>	
+		 
+		  <!-- group for submit button -->  
+		  <div class="form-group" >
+		  	<div class="col-sm-offset-3 col-sm-9">
+		  		<button type="submit" class="btn btn-default">Submit</button>
+		    </div>
+		  </div>
+
+		</form>
+		
+		<!-- space for submitted information --> 
+		<div class="col-sm-offset-3 col-sm-9">
+			Submitted information: {{submittedInformation | json}}
+		</div>
+	</div>
+
+	<!-- angularjs including --> 
+	<script src="node_modules\angular\angular.js"></script>
+	<!-- including angular datepicker -->
+	<script src="node_modules\angularjs-datepicker\dist\angular-datepicker.min.js"></script>
+	<!-- main script -->
+	<script src="myApp.js"></script>	
+	
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* this file contains custom styles */
+.ng-invalid { 
+    border-color: #FF0000 !important;
+}
+.vert-offset-top-5 {
+    margin-top: 5em;
+}
