@@ -41,7 +41,7 @@
 		  	<label for="date" class="col-sm-3 control-label">Date:</label>
 		  	<div class="col-sm-9">
 				<datepicker date-format="yyyy/MM/dd">
-				  <input ng-model="date" type="text" id="date" name="date" ng-model="date" ng-pattern="/^\d{4}/\d{1,2}/\d{1,2}$/" class="form-control">
+				  <input ng-model="date" type="text" id="date" name="date" ng-model="date" class="form-control" datevalidator>
 			  	</datepicker>	
 		  	</div>  		  	
 		  </div>		  
@@ -50,8 +50,9 @@
 		  <div class="form-group" >
 		  	<label for="greetingField" class="col-sm-3 control-label">Greeting Field:</label>
 		  	<div class="col-sm-9">
-		  		<input type="text" id="greetingField" name="greetingField" ng-pattern="/^[А-Я][а-я\s]{3,}$/" ng-model="greetingField" class="form-control" required>
+		  		<input type="text" id="greetingField" name="greetingField"  ng-model="greetingField" class="form-control" greetingvalidator>
 		    </div>
+
 		  </div>	
 		 
 		  <!-- group for submit button -->  
